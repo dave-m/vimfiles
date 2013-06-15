@@ -119,10 +119,15 @@ set nowrap
 if $TERM == "xterm-256color" || $TERM == "screen-256color" || $COLORTERM == "gnome-terminal"
     set t_Co=256
 endif
+
 " Supertab
 let g:SuperTabDefaultCompletionType = "context"
+
 " Gundo
 map <leader>g :GundoToggle<CR>
+
+" CtrlP
+map <leader>p :CtrlP<CR>
 
 " Add the virtualenv's site-packages to vim path
 py << EOF
@@ -138,3 +143,11 @@ EOF
 
 " Ack
 nmap <leader>a <Esc>:Ack!
+
+" Permanent Undo history
+set undofile
+set undodir=~/.vim/undo
+set undolevels=1000
+set undoreload=10000
+
+
